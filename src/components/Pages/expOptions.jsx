@@ -13,10 +13,10 @@ function ExpOpt({ formData, setFormData }) {
   const [opt1, opt2, opt3, opt4] = experience;
 
   return (
-    <div className="flex flex-col w-[460px] sm:w-[560px] items-center space-y-8 text-black font-['Lato'] h-screen">
+    <div className="flex flex-col w-[300px] sm:w-[560px] items-center space-y-8 text-black font-['Lato'] h-screen">
     
       <form action="" onSubmit={handleSubmit} className="w-full flex flex-col text-center">
-      <p className="text-2xl sm:text-3xl md:text-4xl sm:w-[600px] w-[400px] self-center font-semibold pb-6">What experience do you bring to the table?</p>
+      <p className="text-2xl sm:text-3xl md:text-4xl sm:w-[600px] w-[300px] self-center font-semibold pb-6">What experience do you bring to the table?</p>
          <Dropdown
         title={opt1.label}
         options={opt1.options}
