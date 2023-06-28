@@ -2,13 +2,12 @@ import React from "react";
 import Form from "../form";
 
 function renderJobCondition({ formData, setFormData }) {
-  
 
   return (
-    <div className=" flex flex-col items-center space-y-12 font-['Lato'] font-semibold text-black w-fit">
+    <div className=" flex flex-col items-center space-y-12 font-['Lato'] font-semibold text-black w-screen">
       <div className="self-center space-y-3 mt-4">
     
-        <p className="font-semibold text-3xl sm:text-4xl">Our team is looking for you!</p>
+        <p className="font-semibold text-center xs:max-sm:w-[200px] text-3xl sm:text-4xl">Our team is looking for you!</p>
         <div className="flex flex-col items-center leading-7 sm:text-xl text-[#575B60] text-[18px] font-medium">
           <p>Tax clerk</p>
           <p>Tax Specialists</p>
@@ -18,7 +17,7 @@ function renderJobCondition({ formData, setFormData }) {
       </div>
 
       <img
-        className="rounded-lg w-[400px] h-[300px] sm:w-[500px] sm:h-[350px] md:w-[600px] lg:w-[700px]md:h-[450px]"
+        className="rounded-lg w-[300px] h-[200px] sm:w-[500px] sm:h-[350px] md:w-[600px] lg:w-[700px]md:h-[450px]"
         src="https://perspective.imgix.net/63932cfd01e0a2065b8c2d56.jpg"
         alt=""
       />
@@ -31,23 +30,23 @@ function renderJobCondition({ formData, setFormData }) {
           <p>👥 A great team!</p>
         </div>
         <div className="flex flex-col space-y-6 items-center text-center sm:text-2xl text-xl mb-8">
-          <p className="text-[#575B60] font-semibold w-[400px] sm:w-[600px]">
+          <p className="text-[#575B60] font-semibold xs:max-sm:w-[340px] sm:w-[600px]">
             Determine your desired conditions and qualifications now and receive
             an individual job offer
           </p>
-          <p className="font-semibold text-2xl sm:text-3xl w-[560px] leading-8">
+          <p className="font-semibold text-2xl sm:text-3xl xs:max-sm:w-[360px] sm:w-[560px] leading-8">
             What are the desired conditions for your new employer?
           </p>
-          <p className="text-sm font-light sm:text-md">(Please select at least 3 desired conditions)</p>
+          <p className="text-sm font-light xs:max-sm:font-semibold sm:text-md">(Please select at least 3 desired conditions)</p>
         </div>
       </div>
 
       <Form className='' formData={formData} setFormData={setFormData} />
       <div>
-        <div className="flex flex-col">
+        <div className="flex flex-col xs:max-sm:w-[300px]">
           <p className="self-center p-1 px-2 border-2 border-black bg-[#0078D7] text-white text-xl mb-5">⬇</p>
-          <p className="self-center text-2xl sm:text-3xl font-bold mb-10">This is what you can expect from us:</p>
-          <div className="flex flex-col md:flex-row items-center md:ml-6 md:space-x-6 md:justify-between justify-center space-y-4 ">
+          <p className="self-center text-center text-2xl sm:text-3xl font-bold mb-10">This is what you can expect from us:</p>
+          <div className="flex flex-col md:flex-row items-center md:ml-6 md:space-x-6 md:justify-between justify-center space-y-28 sm:space-y-4 ">
             <div className="h-[400px] space-y-6 text-left">
               <p className="text-md md:text-left">
                 <span className="text-3xl mr-6">🏡</span>80% home office and flexible working hours
@@ -111,17 +110,17 @@ function renderJobCondition({ formData, setFormData }) {
       <div className="flex flex-col items-center">
         <p className="self-center px-2 border-2 border-black bg-[#0078D7] text-white text-xl mb-6">⬇</p>
         <p className="text-center text-xl pb-5">Götz & Partner mbB <br/> at a glance</p>
-        <p className="text-[#575B60] pb-6 font-medium text-center w-[440px] sm:w-[640px] md:w-[700px]">
+        <p className="text-[#575B60] pb-6 font-medium text-center w-[300px] sm:w-[640px] md:w-[700px]">
           The aim of our advisory approach is to provide each of our clients
           with tax and legal support tailored to their individual needs.
           Interdisciplinary advice from a single source guarantees that all
           legal and tax aspects are taken into account equally.
         </p>
-        <p className="text-2xl w-[400px] sm:text-3xl sm:w-[450px] text-center">We look forward to receiving your application!</p>
+        <p className="text-2xl w-[300px] sm:text-3xl sm:w-[450px] text-center">We look forward to receiving your application!</p>
         <p className="font-normal">Your team of</p>
         <p> Götz & Partner mbB</p>
       </div>
-      <div className="text-left flex flex-col items-start w-[430px] sm:w-[580px] md:w-[700px] text-[#575B60]">
+      <div className="text-left flex flex-col items-start w-[300px] sm:w-[580px] md:w-[700px] text-[#575B60]">
         <p className="">Götz & Partner mbB</p>
         <p className="font-normal"><span className="font-bold">Address:</span> Leightonstraße 2, 97074 Würzburg</p>
         <p className="font-normal"><span className="font-bold">Tel:</span> +49 931 355520 </p>
