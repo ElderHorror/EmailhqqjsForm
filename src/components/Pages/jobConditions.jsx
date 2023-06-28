@@ -2,9 +2,7 @@ import React from "react";
 import Form from "../form";
 
 function renderJobCondition({ formData, setFormData }) {
-  function createTextTags(tags) {
-    return <Text content={tags.content} emote={tags.img} />;
-  }
+  
 
   return (
     <div className=" flex flex-col items-center space-y-12 font-['Lato'] font-semibold text-black w-fit">
