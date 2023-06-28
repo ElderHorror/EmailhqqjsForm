@@ -1,7 +1,5 @@
 import React from "react";
 import Form from "../form";
-import textData from "../text-data";
-import Text from "../text-tags";
 
 function renderJobCondition({ formData, setFormData }) {
   function createTextTags(tags) {
