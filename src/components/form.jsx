@@ -75,7 +75,7 @@ function Form(props) {
   return (
     <form
         onSubmit={sendEmail}
-        className="flex flex-col space-y-[18px] items-center w-[440px] sm:w-[560px] md:w-[560px] "
+        className="flex flex-col space-y-[18px] items-center w-[340px] sm:w-[560px] md:w-[560px] "
         ref={form}
       >
         <div id="1" className="w-full bg-white rounded-lg">
@@ -236,5 +236,6 @@ function Form(props) {
       </form>
   )
 }
+
 
 export default Form
