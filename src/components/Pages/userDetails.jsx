@@ -119,10 +119,10 @@ function UserDetails({ formData, setFormData }) {
 
     emailjs
       .send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        "service_rck5wba",
+        "template_0ezuw7p",
         templateParams,
-     'YOUR_PUBLIC_KEY'
+        "ajpeWkIkx6gw3yxx_"
       )
       .then((result) => {
         console.log(result.text);
@@ -148,17 +148,17 @@ function UserDetails({ formData, setFormData }) {
   );
 
   return (
-    <div className="w-[460px] sm:w-[560px] flex flex-col space-y-4">
-      <div className="flex flex-col items-center">
+    <div className="w-[300px] sm:w-[560px] flex flex-col space-y-4">
+      <div className=" flex flex-col items-center xs:max-sm:w-[300px]">
         <div className="flex flex-col items-center text-center text-[#575B60]">
           <p className="text-[21px] font-semibold leading-6">
             Your qualifications sound interesting to us! ✅
           </p>
-          <p className="w-[400px] text-md">
+          <p className="sm:w-[400px] py-2 text-md">
             We would like to get to know you better and need some contact
             details from you
           </p>
-          <p className="text-md underline w-[440px]">
+          <p className="text-md underline sm:w-[440px]">
             Don't worry - we will of course treat your data confidentially 🔐
           </p>
         </div>
@@ -199,7 +199,7 @@ function UserDetails({ formData, setFormData }) {
         </div>
         <button
           type="submit"
-          className={`bg-[#222F65] self-center sm:w-[400px] text-white w-full py-4 text-lg rounded-md font-bold ${
+          className={`bg-[#222F65] mb-4 self-center sm:w-[400px] text-white w-full py-4 text-lg rounded-md font-bold ${
             !isTermsChecked ? "opacity-50 pointer-events-none" : ""
           }`}
           onClick={handleSubmit}
