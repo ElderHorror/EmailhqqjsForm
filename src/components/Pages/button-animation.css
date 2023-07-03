@@ -1,0 +1,61 @@
+
+
+@keyframes shake {
+  0% {
+    transform: scale(1.1);
+    transform: rotate(-5deg);
+  }
+  2% {
+    transform: rotate(5deg);
+  }
+  4% {
+    transform: rotate(-6deg);
+  }
+  6% {
+    transform: rotate(6deg);
+  }
+  8% {
+    transform: rotate(0deg);
+  }
+
+  }
+
+
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-button {
+  animation: buttonAnimation 4s, shake 10s linear 1.5s;
+}
+.checkbox {
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 1px solid grey;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.checkbox:active,
+.checkbox.checked {
+  border: 2px solid rgb(22, 160, 22);
+}
+
+.checkbox .text-white {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
