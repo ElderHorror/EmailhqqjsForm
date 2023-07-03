@@ -14,7 +14,7 @@ const experience = [
   {
     id: 2,
     label: "Years In The Profession",
-    options: ["<2 Yeats", "2-4 Years", "4-8 Years", ">8 Years"],
+    options: ["<2 Years", "2-4 Years", "4-8 Years", ">8 Years"],
   },
   {
     id: 3,
