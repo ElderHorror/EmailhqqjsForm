@@ -1,0 +1,7 @@
+
+input:checked + div {  
+  @apply bg-[#222F65];  
+}  
+input:checked + div svg {  
+  @apply block;  
+}
