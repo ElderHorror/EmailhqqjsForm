@@ -123,10 +123,10 @@ function UserDetails({ formData, setFormData }) {
 
     emailjs
       .send(
-        "service_rck5wba",
-        "template_0ezuw7p",
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
         templateParams,
-        "ajpeWkIkx6gw3yxx_"
+        "YOUR_PUBLIC_ID"
       )
       .then((result) => {
         console.log(result.text);
