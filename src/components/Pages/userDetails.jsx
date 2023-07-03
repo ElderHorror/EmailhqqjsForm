@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import UserInput from "../user-input";
 import Dropdown from "../dropdown2";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-import { FaExclamationTriangle } from "react-icons/fa";
+import './button-animation.css'
+import { FcCheckmark } from "react-icons/fc";
 
 function UserDetails({ formData, setFormData }) {
   const navigate = useNavigate();
@@ -27,18 +28,21 @@ function UserDetails({ formData, setFormData }) {
       type: "text",
       placeholder: "Your first and last name",
       title: "Full Name",
+      emote: '👋',
     },
     {
       id: 2,
       type: "email",
       placeholder: "Your e-mail address",
       title: "Email",
+       emote: '✉️',
     },
     {
       id: 3,
       type: "tel",
       placeholder: "Your phone number (for enquiries only)",
       title: "Phone Number",
+       emote: '📞',
     },
   ];
 
@@ -119,10 +123,10 @@ function UserDetails({ formData, setFormData }) {
 
     emailjs
       .send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        "service_rck5wba",
+        "template_0ezuw7p",
         templateParams,
-        'YOUR_PUBLIC_KEY'
+        "ajpeWkIkx6gw3yxx_"
       )
       .then((result) => {
         console.log(result.text);
@@ -134,6 +138,7 @@ function UserDetails({ formData, setFormData }) {
 
   const createUserInput = (inp) => (
     <UserInput
+    emote={inp.emote}
       key={inp.id}
       id={inp.id}
       type={inp.type}
@@ -143,9 +148,20 @@ function UserDetails({ formData, setFormData }) {
       onInputChange={handleInputChange}
       formData={formData}
       setFormData={setFormData}
-      className="w-full sm: border-b py-5 px-4 text-md font-light"
+      className="w-full sm: border-b py-5 px-3 text-md font-light"
     />
   );
+
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimate(true);
+      setTimeout(() => setAnimate(false), 13000);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="w-[300px] sm:w-[560px] flex flex-col space-y-4">
@@ -168,40 +184,40 @@ function UserDetails({ formData, setFormData }) {
         <p className="text-center text-black md:text-4xl text-2xl sm:text-3xl font-semibold pb-6">
           What is the best way to reach you?
         </p>
+        
         {param.map(createUserInput)}
         <Dropdown
+        emote='💬'
   title={drop[0].title}
   options={drop[0].options}
   formData={formData}
   setFormData={setFormData}
-  className="w-full bg-white text-left py-5 flex flex-col  border-b"
-  ulClassName="rounded-lg self-center w-[400px] sm:w-[500px]  border text-sm py-2 mb-2"
+  className = 'bg-white text-left  py-5 border-b ' 
+  ulClassName = 'rounded-lg text-center border rounded-lg text-sm py-2 mb-2 hover:cursor-pointer'
   onOptionSelect={setSelectedOption} // Pass the setSelectedOption function as the onOptionSelect prop
 />
 
-        <div className="mb-4 bg-white py-5 pl-4 rounded-b-lg">
-          <input
-            type="checkbox"
-            name=""
-            id="checkbox"
-            className="bg-white"
-            checked={isTermsChecked}
-            onChange={(e) => setIsTermsChecked(e.target.checked)}
-          />
-          <label
-            htmlFor="checkbox"
-            className="w-full hover:cursor-pointer py-5 pr-10 text-sm bg-white"
-          >
-            {" "}
-            <span className="underline"> Privacy Policy,</span> Read and
-            accepted
-          </label>
-        </div>
+<div className="flex flex-row mb-4 bg-white py-5 pl-4 items-center rounded-b-lg">
+  <div
+     className={`checkbox ${isTermsChecked ? "checked" : ""}`}
+    onClick={() => setIsTermsChecked(!isTermsChecked)}
+  >
+    {isTermsChecked && <FcCheckmark className="text-green-700 h-4 w-6" />}
+  </div>
+  <label
+    htmlFor="checkbox"
+    className="w-full hover:cursor-pointer py-2 pl-4 text-sm bg-white"
+    onClick={() => setIsTermsChecked(!isTermsChecked)}
+  >
+    <span className="underline"> Privacy Policy,</span> Read and accepted
+  </label>
+</div>
+
         <button
           type="submit"
           className={`bg-[#222F65] mb-4 self-center sm:w-[400px] text-white w-full py-4 text-lg rounded-md font-bold ${
             !isTermsChecked ? "opacity-50 pointer-events-none" : ""
-          }`}
+          } ${animate ? 'animate-button' : ''}`}
           onClick={handleSubmit}
           disabled={!isTermsChecked}
         >
