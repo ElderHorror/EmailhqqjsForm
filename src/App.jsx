@@ -6,7 +6,7 @@ import UserDetails from "./components/Pages/userDetails";
 import UserSubmit from "./components/Pages/userSubmit";
 
 function App() {
-  const [formData, setFormData] = useState({
+  const [formDat, setFormDat] = useState({
     options: {
       from_name: "",
       to_name: "",
